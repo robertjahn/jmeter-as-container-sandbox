@@ -7,6 +7,7 @@ pipeline {
                                   credentialsId: 'dockerhub',
                                   usernameVariable: 'DOCKER_HUB_USER',
                                   passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
+				cleanWs()
 				echo "HI"
                       		sh "./smoke.sh"
 			}
