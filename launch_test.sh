@@ -38,4 +38,12 @@ echo "Running with SERVER_URL=$3, VUCount=$VUCount, LoopCount=4LoopCount, DT_LTN
 #rm -f -r $2
 #mkdir $2
 #docker run --name jmeter-test -v "${PWD}/scripts":/scripts -v "${PWD}/$2":/results --rm -d jmeter ./jmeter/bin/jmeter.sh -n -t /scripts/$1 -e -o /results -l result.tlf -JSERVER_URL="$3" -JDT_LTN="$DT_LTN" -JVUCount="$VUCount" -JLoopCount="$LoopCount" -JSERVER_PORT="$ServerPort"
-docker run --name jmeter-test -v "${PWD}/scripts":/scripts -v "${PWD}/$2":/results -v "${PWD}/results_raw":/results_raw --rm -d robjahn/jmeter ./jmeter/bin/jmeter.sh -n -t /scripts/$1 -f -e -j /results_raw/jmeter.log -l /results_raw/result.tlf -JSERVER_URL="$3" -JDT_LTN="$DT_LTN" -JVUCount="$VUCount" -JLoopCount="$LoopCount"
+echo "Running test:"
+echo "Script: $1"
+echo "Result folder: $2"
+echo "URL: $3"
+echo "Server Port: $ServerPort"
+echo "VUCount: $VUCount"
+echo "LoopCount: $LoopCount"
+echo "LTN: $DT_LTN"
+docker run --name jmeter-test -v "${PWD}/scripts":/scripts -v "${PWD}/$2":/results -v "${PWD}/results_log":/results_log -v "${PWD}/results_raw":/results_raw --rm -d robjahn/jmeter ./jmeter/bin/jmeter.sh -n -t /scripts/$1 -f -e -j /results_log/jmeter.log -l /results_raw/result.tlf -JSERVER_URL="$3" -JDT_LTN="$DT_LTN" -JVUCount="$VUCount" -JLoopCount="$LoopCount"
