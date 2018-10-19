@@ -8,6 +8,8 @@ pipeline {
                                   usernameVariable: 'DOCKER_HUB_USER',
                                   passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
 				echo "HI"
+				deleteDir()
+				checkout scm
                       		sh "./smoke.sh"
 			}
                    }
