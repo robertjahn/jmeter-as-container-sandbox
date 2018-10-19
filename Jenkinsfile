@@ -8,7 +8,6 @@ pipeline {
                                   usernameVariable: 'DOCKER_HUB_USER',
                                   passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
 				echo "HI"
-				sh "rm -rf results/"
                       		sh "./smoke.sh"
 			}
                    }
