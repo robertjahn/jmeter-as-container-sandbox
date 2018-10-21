@@ -1,7 +1,7 @@
 pipeline {
     agent any
         stages {
-		cleanWS()
+		cleanWs()
 	        stage('Run Smoke Test') {
 	            steps {
 		    	withCredentials([[$class: 'UsernamePasswordMultiBinding',
