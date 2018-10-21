@@ -13,6 +13,12 @@ node {
     }
 	
     stage('Run Smoke Test') {
+	   
+	dir ('dynatrace-scripts') {
+            //sh './pushevent.sh SERVICE CONTEXTLESS DockerService SampleNodeJsStaging ' +
+            //   '"STARTING Load Test" ${JOB_NAME} "Starting a Load Test as part of the Testing stage"' + 
+            //   ' ${JENKINS_URL} ${JOB_URL} ${BUILD_URL} ${GIT_COMMIT}'
+        }
          withCredentials([[$class: 'UsernamePasswordMultiBinding',
 		  credentialsId: 'dockerhub',
 		  usernameVariable: 'DOCKER_HUB_USER',
