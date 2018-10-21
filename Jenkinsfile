@@ -6,6 +6,10 @@ node {
     }
 	
     stage('Checkout') {
+	
+	// get our test code
+	git url: 'https://github.com/robertjahn/jmeter-as-container.git', branch: 'master'
+	    
         // into a dynatrace-cli subdirectory we checkout the CLI
         dir ('dynatrace-cli') {
             git url: 'https://github.com/Dynatrace/dynatrace-cli.git', branch: 'master'
