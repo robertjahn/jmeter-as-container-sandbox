@@ -9,9 +9,9 @@ pipeline {
                                   passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
                                 sh "./cleanup.sh jmeter-test"
                       		sh "./smoke.sh"
-                                archiveArtifacts artifacts: 'results/**', fingerprint: true
-                                archiveArtifacts artifacts: 'results_raw/**', fingerprint: true
-                                archiveArtifacts artifacts: 'results_log/**', fingerprint: true
+                                archiveArtifacts artifacts: 'results/**', fingerprint: true, allowEmptyArchive: true
+                                archiveArtifacts artifacts: 'results_raw/**', fingerprint: true, allowEmptyArchive: true
+                                archiveArtifacts artifacts: 'results_log/**', fingerprint: true, allowEmptyArchive: true
 			}
                    }
                 }
