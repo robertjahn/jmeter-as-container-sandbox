@@ -2,7 +2,7 @@
 # Starts a JMeter test that is passed via command line arguments
 echo Usage:
 echo ./launch_test.sh [Jmeter Script] [result report path] [Server]] [ServerPort] [VUCount] [LoopCount] [Dynatrace LoadTestName]
-echo ./launch_test.sh frontend_load.jmx ./results 35.237.86.214 8079 5 500 frontend_load
+echo Example:  ./launch_test.sh frontend_load.jmx ./results 35.237.86.214 8079 5 500 frontend_load
 
 if [ -z "$1" ]; then
   echo "Usage: Arg 1 needs to be valid <yourtestscript.jmx>"
