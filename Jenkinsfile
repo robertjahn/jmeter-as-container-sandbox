@@ -1,9 +1,9 @@
 pipeline {
     agent any
         stages {
-		cleanWs()
 	        stage('Run Smoke Test') {
 	            steps {
+			cleanWs()
 		    	withCredentials([[$class: 'UsernamePasswordMultiBinding',
                                   credentialsId: 'dockerhub',
                                   usernameVariable: 'DOCKER_HUB_USER',
