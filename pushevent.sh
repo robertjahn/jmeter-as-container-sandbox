@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash Script that will push a Custom Annotation event to Dynatrace via ${DT_URL}/api/v1/events
+# Bash Script that will push a Custom Annotation event to Dynatrace via ${DT_URL}/api/v1/events  
 # The script also assumes the ${DT_TOKEN} contains your API-Token!
 # Either set your Dynatrace Token and URL in this script or pass it as Env Variables to this Shell Script
 # DT_TOKEN=YOURAPITOKEN
